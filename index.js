@@ -1,9 +1,8 @@
 const ramens = [
-    { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "/Images/shoyu.jpeg", rating: 5, comment: "Rich umami flavor with perfectly cooked noodles!" },
-    { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "/Images/miso.jpeg", rating: 4, comment: "Savory and hearty, great on a cold day." },
-    { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "/Images/Tonkotsu.jpeg", rating: 3, comment: "Creamy pork broth that's been simmered for hours." }
+    { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "images/shoyu.jpeg", rating: 5, comment: "Rich umami flavor with perfectly cooked noodles!" },
+    { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "images/miso.jpeg", rating: 4, comment: "Savory and hearty, great on a cold day." },
+    { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "images/Tonkotsu.jpeg", rating: 3, comment: "Creamy pork broth that's been simmered for hours." }
   ];
-  
   
   let selectedRamen = null;
   

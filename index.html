@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ramen Rating App</title>
-    <link rel="stylesheet" href="styles.cssg" />
+    <!-- Make sure these paths are correct -->
+    <link rel="stylesheet" href="styles.css" />
     <script src="index.js"></script>
   </head>
 
@@ -40,12 +41,13 @@
                 
                 <div class="form-group">
                   <label for="image">Image URL</label>
+                  <!-- Fix the image paths to be relative to your project structure -->
                   <select id="image" name="image">
-                    <option value="/Images/shoyu.jpeg">Shoyu</option>
-                    <option value="/Images/miso.jpeg">Miso</option>
-                    <option value="/Images/Tonkotsu.jpeg">Tonkotsu</option>
-                    <option value="/Images/Gyukotsu.jpeg">Gyukotsu</option>
-                    <option value="/Images/Kojiro.jpeg">Kojiro</option>
+                    <option value="images/shoyu.jpeg">Shoyu</option>
+                    <option value="images/miso.jpeg">Miso</option>
+                    <option value="images/Tonkotsu.jpeg">Tonkotsu</option>
+                    <option value="images/Gyukotsu.jpeg">Gyukotsu</option>
+                    <option value="images/Kojiro.jpeg">Kojiro</option>
                   </select>
                 </div>
                 
@@ -67,6 +69,6 @@
       </main>
     </div>
 
-    <script src="script.js"></script>
+    
   </body>
 </html>
