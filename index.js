@@ -1,12 +1,14 @@
 const ramens = [
-    { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "images/shoyu.jpeg", rating: 5, comment: "Rich umami flavor with perfectly cooked noodles!" },
-    { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "images/miso.jpeg", rating: 4, comment: "Savory and hearty, great on a cold day." },
-    { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "images/Tonkotsu.jpeg", rating: 3, comment: "Creamy pork broth that's been simmered for hours." }
+    { id: 1, name: "Shoyu Ramen", restaurant: "Restaurant found: Kempinski", image: "images/shoyu.jpeg", rating: 5, comment: "Rich umami flavor with perfectly cooked noodles!" },
+    { id: 2, name: "Miso Ramen", restaurant: "Restaurant found: JW marriot", image: "images/miso.jpeg", rating: 4, comment: "Savory and hearty, great on a cold day." },
+    { id: 3, name: "Tonkotsu Ramen", restaurant: " Restaurant found: Hilton", image: "images/Tonkotsu.jpeg", rating: 3, comment: "Creamy pork broth that's been simmered for hours." },
+    { id: 4, name: "Kojiro Ramen", restaurant: "Restaurant found: Windsor", image: "images/Kojiro.jpeg", rating: 2, comment: "a unique style of ramen characterized by its spicy blend that combines chicken and seafood broth"}
   ];
   
   let selectedRamen = null;
   
-  // Display ramen images
+  // Display of ramen images
+
   function displayRamens() {
     const ramenMenu = document.getElementById('ramen-menu');
     ramenMenu.innerHTML = '';
@@ -35,12 +37,14 @@ const ramens = [
     });
   }
   
-  // Handle ramen click
+  // handling of the ramen click
+
+
   function handleClick(ramen) {
     selectedRamen = ramen;
     displayRamenDetail(ramen);
     
-    // Update selected state in the UI
+  
     document.querySelectorAll('.ramen-card').forEach(card => {
       card.classList.remove('selected');
     });
@@ -55,7 +59,7 @@ const ramens = [
     });
   }
   
-  // Display ramen detail
+  // Display ramen details
   function displayRamenDetail(ramen) {
     const ramenDetail = document.getElementById('ramen-detail');
     
@@ -84,7 +88,7 @@ const ramens = [
       </div>
     `;
     
-    // Add event listeners for edit and delete
+    // Add event listeners for editing and deleting
     const editBtn = ramenDetail.querySelector('.edit-btn');
     const deleteBtn = ramenDetail.querySelector('.delete-btn');
     
@@ -97,7 +101,7 @@ const ramens = [
     });
   }
   
-  // Create star rating HTML
+  // Create star rating function
   function createStarRating(rating) {
     let stars = '';
     for (let i = 1; i <= 5; i++) {
@@ -110,29 +114,28 @@ const ramens = [
     return stars;
   }
   
-  // Toggle edit mode
+  
   function toggleEditMode(ramen) {
     const detailComment = document.querySelector('.detail-comment');
     const starRating = document.querySelector('.star-rating');
     const editBtn = document.querySelector('.edit-btn');
     
     if (detailComment.contentEditable === 'true') {
-      // Save changes
       detailComment.contentEditable = 'false';
       detailComment.classList.remove('editable');
       
-      // Update the ramen comment
+      
       const newComment = detailComment.textContent;
       updateRamen(ramen.id, { comment: newComment });
       
       editBtn.textContent = '✏️';
     } else {
-      // Enter edit mode
+      
       detailComment.contentEditable = 'true';
       detailComment.classList.add('editable');
       detailComment.focus();
       
-      // Make stars clickable
+      // Making the  stars clickable
       const stars = starRating.textContent.split('');
       starRating.innerHTML = '';
       
@@ -153,7 +156,7 @@ const ramens = [
     }
   }
   
-  // Update ramen
+//updating the ramen
   function updateRamen(id, updates) {
     const index = ramens.findIndex(r => r.id === id);
     if (index !== -1) {
@@ -167,7 +170,7 @@ const ramens = [
     }
   }
   
-  // Delete ramen
+  
   function deleteRamen(id) {
     const index = ramens.findIndex(r => r.id === id);
     if (index !== -1) {
@@ -179,7 +182,7 @@ const ramens = [
         const ramenDetail = document.getElementById('ramen-detail');
         ramenDetail.innerHTML = `
           <div class="empty-state">
-            <p>No ramens available. Add one!</p>
+            <p>No ramens available. Kindly Add one!</p>
           </div>
         `;
       }
@@ -188,7 +191,7 @@ const ramens = [
     }
   }
   
-  // Add form submit listener
+  // Adding a form submit listener
   function addSubmitListener() {
     const newRamenForm = document.getElementById('new-ramen-form');
     
@@ -213,22 +216,21 @@ const ramens = [
       ramens.push(newRamen);
       handleClick(newRamen);
       
-      // Reset form
+      
       newRamenForm.reset();
     });
   }
-  
-  // Main function to initialize the app
+  //main function
   function main() {
     displayRamens();
     addSubmitListener();
     
-    // Display the first ramen by default
+  
     if (ramens.length > 0) {
       handleClick(ramens[0]);
     }
   }
   
-  // Wait for DOM to be fully loaded
+  
   document.addEventListener('DOMContentLoaded', main);
   
