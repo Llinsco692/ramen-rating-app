@@ -30,7 +30,7 @@ A beautiful, user-friendly web application for ramen enthusiasts to track, rate,
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ramen-rating-app.git
+git clone git@github.com:Llinsco692/ramen-rating-app.git
 ```
 
 2. Navigate to the project folder:
@@ -42,7 +42,7 @@ cd ramen-rating-app
    - Double-click on `index.html`, or
    - Use a local development server like Live Server in VS Code
 
-That's it! No build process or complex setup required.
+
 
 ## How to Use
 
@@ -52,14 +52,14 @@ That's it! No build process or complex setup required.
    - Ramen name
    - Restaurant where you tried it
    - Select an image that best represents the style
-   - Your rating (1-5 stars)
+   - Your rating is between (1-5 stars)
    - Any comments or notes about your experience
 
 2. Click "Add Ramen" to save to your collection
 
 ### Viewing Your Collection
 
-- All your ramen entries are displayed in a visually appealing grid
+- All  ramen entries are displayed in a visually appealing grid
 - Click on any ramen card to view its full details
 
 ### Managing Entries
@@ -72,7 +72,7 @@ That's it! No build process or complex setup required.
 The Ramen Rating App is fully responsive:
 - **Desktop**: Multi-column layout with larger images
 - **Tablet**: Optimized for medium-sized screens
-- **Mobile**: Single-column, touch-friendly interface
+- **Mobile**: Single-column
 
 ## 💾 Data Storage
 
@@ -81,17 +81,17 @@ Your ramen collection is saved locally in your browser, so:
 - Your data stays private on your device
 - Your collection persists between visits
 
-## 👥 Contributing
+##  Contributing
 
 Contributions are welcome! To contribute:
 
-1. Fork the repository
+1. Fork the repository(git@github.com:Llinsco692/ramen-rating-app.git)
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+3. Commit your changes (`git commit -m ''`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
