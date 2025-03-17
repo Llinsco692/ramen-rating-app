@@ -1,0 +1,187 @@
+:root {
+    --primary: #f39c12; /* Updated primary color */
+    --primary-hover: #e67e22;
+    --background: #fafafa;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #ecf0f1;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --heading1-color: #e74c3c; /* Color for h1 */
+    --heading2-color: #2980b9; /* Color for h2 */
+    --heading3-color: #27ae60; /* Color for h3 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    text-align: center; /* Ensures central alignment of text */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Typography with Different Heading Colors */
+h1, h2, h3 {
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--heading1-color); /* Custom color for h1 */
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: var(--heading2-color); /* Custom color for h2 */
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--heading3-color); /* Custom color for h3 */
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+/* Center Content */
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center; /* Center the content horizontally */
+    text-align: center; /* Center text within the grid items */
+}
+
+@media (min-width: 992px) {
+    .app-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Grid Layout for Images */
+.ramen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.ramen-card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center; /* Ensure text inside the card is centered */
+}
+
+.ramen-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ramen-card.selected {
+    border: 3px solid var(--primary);
+}
+
+.ramen-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary);
+}
+
+.ramen-card-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ramen-card-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+}
+
+.ramen-card-restaurant {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: auto;
+}
+
+@media (min-width: 600px) {
+    .ramen-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .ramen-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+/* Form and Buttons */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn {
+    padding: 0.85rem 1.2rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
