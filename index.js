@@ -204,14 +204,7 @@ const ramens = [
       const ratingInput = document.getElementById('rating');
       const commentInput = document.getElementById('comment');
       
-      const newRamen = {
-        id: Math.max(0, ...ramens.map(r => r.id)) + 1,
-        name: nameInput.value,
-        restaurant: restaurantInput.value,
-        image: imageInput.value,
-        rating: parseInt(ratingInput.value) || 0,
-        comment: commentInput.value
-      };
+      
       
       ramens.push(newRamen);
       handleClick(newRamen);
