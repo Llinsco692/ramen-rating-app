@@ -191,35 +191,54 @@ const ramens = [
     }
   }
   
-  // Adding a form submit listener
-  function addSubmitListener() {
-    const newRamenForm = document.getElementById('new-ramen-form');
+ 
+    function addSubmitListener() {
+      const newRamenForm = document.getElementById('new-ramen-form');
+      
+      newRamenForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        
+        const formElements = {
+          name: document.getElementById('name'),
+          restaurant: document.getElementById('restaurant'),
+          image: document.getElementById('image'),
+          rating: document.getElementById('rating'),
+          comment: document.getElementById('comment')
+        };
+        
+        
+        const newRamen = {
+          id: generateUniqueId(),
+          name: formElements.name.value,
+          restaurant: formElements.restaurant.value,
+          image: formElements.image.value,
+          rating: Number(formElements.rating.value) || 0,
+          comment: formElements.comment.value
+        };
+        
+        
+        addRamenToCollection(newRamen, false);
+        
+        
+        newRamenForm.reset();
+      });
+    }
+
     
-    newRamenForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+    function generateUniqueId() {
+      return Math.max(0, ...ramens.map(r => r.id)) + 1;
+    }
+    
+    
+    function addRamenToCollection(ramen, selectAfterAdd = true) {
+      ramens.push(ramen);
+      displayRamens();
       
-      const nameInput = document.getElementById('name');
-      const restaurantInput = document.getElementById('restaurant');
-      const imageInput = document.getElementById('image');
-      const ratingInput = document.getElementById('rating');
-      const commentInput = document.getElementById('comment');
-      
-      const newRamen = {
-        id: Math.max(0, ...ramens.map(r => r.id)) + 1,
-        name: nameInput.value,
-        restaurant: restaurantInput.value,
-        image: imageInput.value,
-        rating: parseInt(ratingInput.value) || 0,
-        comment: commentInput.value
-      };
-      
-      ramens.push(newRamen);
-      handleClick(newRamen);
-      
-      
-      newRamenForm.reset();
-    });
-  }
+      if (selectAfterAdd) {
+        handleClick(ramen);
+      }
+    }
   //main function
   function main() {
     displayRamens();
